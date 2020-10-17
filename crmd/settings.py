@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'crmd.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 SECRET_KEY = Config('SECRET_KEY')
-DEBUG = Config('DEBUG', default=False, cast=bool)
+DEBUG = Config('DEBUG', cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
         default=Config('DATABASE_URL')
