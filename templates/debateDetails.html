@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+<title>Debate Details | CRMD 2020</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center">
+    <img src="{% static "stuco.png" %}" alt="Logo">
+    <h2>Fr. Conceicao Rodrigues Memorial Debate 2020</h1>
+    <hr>
+    <h3>Your team code : {{ request.user.username }}</h3>
+    <br>
+  </div>
+  <div style="width: 100%" class="card ml-auto mr-auto">
+    <div style="background-color: #4243BC; color: white" class="card-header text-center">
+      Next Debate Details
+    </div>
+    <div style="background-color: yellow; height: 3px;"></div>
+    <div class="card-body">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Debate No.</th>
+            <th scope="col">Motion</th>
+            <th scope="col">Side</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ debate.dnum }}</th>
+            <td>{{ debate.motion }}</td>
+            <td>{{ debate.side }}</td>
+            <td>{{ debate.link }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

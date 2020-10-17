@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+<title>Home | CRMD 2020</title>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron my-3">
+  <h1 class="display-4 text-center" style="font-size: 45px; margin-top: -50px!important;">Fr. Conceicao Rodrigues College Memorial Debate 2020</h1>
+  <hr>
+  <div class="card border-primary my-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{% static "poster.jpg" %}" class="card-img" alt="Poster" style="height: 100%;">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title text-primary text-center"><u>About CRMD 2020</u></h5>
+          <p class="card-text">The National level Fr. Conceicao Rodrigues Memorial Debate is a prestigious Debate Competition in Mumbai, hosted annually by Fr. Conceicao Rodrigues College of Engineering, Bandra.<br><br>
+          CRMD has been a reputed platform for students all across the country for 8 years now. This year, in the face of COVID-19, we are organizing a 3 day virtual event on <b style="font-size: large">6th , 7th and 8th November 2020.</b><br><br>
+          The debate aims to provide a forum for today’s youth to articulate views and engage in a dialogue on various affairs that affect the life of the common man, directly or otherwise while also showcasing the power of deploying rational, reasoned arguments and compelling evidence in action.<br><br>
+          Our theme for this year is <b style="font-size: large"><u>Immanent Critique of Social Adiaphora.</u></b><br><br>
+          The essence of the theme is social critique in a world which naturally neither means to debar or permit our actions while also exploring the personal virtues of an individual and how their ideas compare to the set practices. We identify the positive features of the prevailing social and political world order and open up intellectual space to challenge this world’s “immanent contradictions” to empowering a wider range of society.</p>
+          <b style="font-size: large"><u>2 members per team and 1 team per college is allowed</u></b><br><br>
+          <p class="card-text">
+            <a target="_blank" href="https://forms.gle/wSjBZ7njwijDYGjVA" class="btn btn-lg btn-outline-primary">Register</a>
+            <a target="_blank" href="{% static "CRMD.pdf" %}" class="btn btn-lg btn-outline-danger float-right">Download Brochure</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 class="display-4 text-center" style="font-size: 45px; margin-top: 55px!important;">Contact Us</h1>
+  <hr class="mb-5">
+  <div class="row">
+    <div class="col-sm-3 offset-3 text-center">
+      <i style="font-size: 30px;" class="fa fa-phone"></i>
+      <p style="font-size: 20px;">Saloni Khanna<br>(Editorial Secretary)</p>
+      <p style="font-size: 20px;">+91 9167293111</p>
+    </div>
+    <div class="col-sm-3 text-center">
+      <i style="font-size: 30px;" class="fa fa-envelope"></i>
+      <p style="font-size: 20px;"><a href="mailto:studentscouncilfrcrce@gmail.com">studentscouncilfrcrce@gmail.com</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

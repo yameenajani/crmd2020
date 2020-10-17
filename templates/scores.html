@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+<title>Scores | CRMD 2020</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center">
+    <h2>Fr. Conceicao Rodrigues Memorial Debate 2020</h1>
+    <hr>
+  </div>
+  <div style="width: 100%" class="card ml-auto mr-auto">
+    <div style="background-color: #4243BC; color: white" class="card-header text-center">
+      Debate scores
+    </div>
+    <div style="background-color: yellow; height: 3px;"></div>
+    <div class="card-body">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Debate No.</th>
+            <th scope="col">Proposition</th>
+            <th scope="col">Opposition</th>
+            <th scope="col">pscore</th>
+            <th scope="col">oscore</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for score in scores %}
+          <tr>
+            <th scope="row">{{ score.dnum }}</th>
+            <td>{{ score.prop }}</td>
+            <td>{{ score.opp }}</td>
+            <td>{{ score.pscore }}</td>
+            <td>{{ score.oscore }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
