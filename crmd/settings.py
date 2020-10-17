@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from django.urls import reverse_lazy
-from decouple import Config
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,12 +24,12 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'uw+5*fb+5-yw**rbo2#+7s%(#^qkuyim@o-#ib2$dwtxpi*ot2'
+SECRET_KEY = 'uw+5*fb+5-yw**rbo2#+7s%(#^qkuyim@o-#ib2$dwtxpi*ot2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = '/admin/login'
 LOGIN_REDIRECT_URL = '/admin/auth/user'
@@ -83,12 +81,11 @@ WSGI_APPLICATION = 'crmd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-SECRET_KEY = Config('SECRET_KEY')
-DEBUG = Config('DEBUG')
 DATABASES = {
-    'default': dj_database_url.Config(
-        default=Config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
@@ -134,5 +131,5 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
