@@ -7,11 +7,11 @@
     <img src="{% static "stuco.png" %}" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">
     CRMD 2020
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-    <ul class="navbar-nav nav-justified ml-auto">
+    <ul style="background-color: #5000A6" class="navbar-nav nav-justified ml-auto">
         <li class="nav-item">
             <a class="nav-link {% if request.path == home_url %}rounded bg-danger{% endif %}" href="{{home_url}}">Home</a>
         </li>
