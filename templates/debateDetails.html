@@ -21,6 +21,7 @@
     <div style="background-color: yellow; height: 3px;"></div>
     <div class="card-body table-responsive">
       <table class="table table-borderless">
+        {% if avail %}
         <thead>
           <tr>
             <th scope="col">Debate No.</th>
@@ -37,6 +38,13 @@
             <td>{{ debate.link }}</td>
           </tr>
         </tbody>
+        {% else %}
+        <thead>
+          <tr>
+            <th scope="col">{{ debate }}</th>
+          </tr>
+        </thead>
+        {% endif %}
       </table>
     </div>
   </div>

@@ -12,8 +12,12 @@ def debate_details(request):
     
     if request.user.groups.first().name == 'teams':
         username = request.user.username
-        qry = Debate.objects.filter(team=username).order_by('-dnum')[0]
-        res_dict = {'debate':qry}
+        qry = Debate.objects.filter(team=username).order_by('-dnum')
+        if qry.exists():
+            query = qry[0]
+            res_dict = {'debate':query, 'avail':True}
+        else:
+            res_dict = {'debate': 'Details currently unavailable', 'avail':False}
         return render(request, 'debateDetails.html', context=res_dict)
     else:
         return render(request, '400.html')
